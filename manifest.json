@@ -1,0 +1,48 @@
+{
+  "lang" : "pt-br",
+  "name": "Tamagoshi",
+  "short_name": "Tamagoshi",
+  "description" : "WEB Tamagoshi",
+  "icons": [{
+    "src": "img/icon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "img/icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "img/icon.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "img/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "img/icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }, {
+      "src": "img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "author": {
+    "name": "Luiz Gustavo da Silva Vasconcellos",
+    "github": "https://github.com/iamtheluiz"
+  },
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation" : "portrait",
+  "background_color": "#13418c",
+  "theme_color": "#0e326d",
+  "refresh": "false",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+    "platform": "play",
+    "id": "com.iamtheluiz.tamagotshi"
+    }
+  ]
+}
