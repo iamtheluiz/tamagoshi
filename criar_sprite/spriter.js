@@ -3,6 +3,8 @@ var display_h = document.getElementById("display");	//Display HTML
 var display = [];	//Guarda o estado de cada pixel (aceso ou apagado)
 var display_x = 19;	//Largura do Display
 var display_y = 16;	//Altura do Display
+var nm_sprite = 'sprite';	//Nome do Sprite
+
 var sprite = [];
 
  sprite[1] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -78,7 +80,7 @@ function mudar_code(){
 
 	var code = document.getElementById("code");
 	var txt = '';
-	txt += "&nbsp; var sprite[];<br>";
+	txt += "var "+nm_sprite+" = [];<br>";
 	txt += "<br>";
 
 	for(var y = 1; y <= display_y; y++){
@@ -86,9 +88,9 @@ function mudar_code(){
 
 			if(x == 1){
 				if(y < 10){
-					txt += "&nbsp; sprite["+y+"] = ['|'";
+					txt += "&nbsp;"+nm_sprite+"["+y+"] = ['|'";
 				}else{
-					txt += "sprite["+y+"] = ['|'";
+					txt += nm_sprite+"["+y+"] = ['|'";
 				}
 				txt += ","+sprite[y][x];
 			}else{
@@ -101,6 +103,10 @@ function mudar_code(){
 
 	code.innerHTML = txt;
 
+}
+
+function mudar_nome_sprite(nm){
+	nm_sprite = nm;
 }
 
 //Inicialização do spriter
