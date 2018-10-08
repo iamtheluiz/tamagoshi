@@ -1,0 +1,13 @@
+/* Ao mudar o tamaho do display, é necessário mudar o tamanho dos outros componentes */
+#display{
+	width: 50vw;
+}
+.pixel{
+	width: calc(50vw / 19 - 4px);
+	height: calc(50vw / 19 - 4px);
+	border:2px solid grey;
+	float:left;
+}
+.corpo{
+	background-color: black;
+}
