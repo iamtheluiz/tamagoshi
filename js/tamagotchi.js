@@ -5,8 +5,11 @@ var display_x = 19;	//Largura do Display
 var display_y = 16;	//Altura do Display
 var sprite = [];
 
-var st_estado = [];	//Atividade do tamagotchi
-st_estado[0] = 's_espera';	//Sprites de espera
+var estados = [];	//Atividade do tamagotchi
+estados[0] = 'chocando';	//Sprites do ovo
+estados[1] = 's_espera';	//Sprites de espera
+
+var estado = 0;
 
 function criar_display(){
 
@@ -32,12 +35,24 @@ function criar_display(){
 
 }
 
+function loop(){
+	if(estado == 'chocando'){
+		atualizar_chocando();
+	}else if(estado == 'esperando'){
+		atualizar_espera();
+	}
+}
+
 
 function atualizar(){
-	atualizar_espera();
+	estado = 'esperando';
+}
+function criar_ovo(){
+	estado = 'chocando';
 }
 
 //Inicialização do jogo
 criar_display();
+criar_ovo();
 
-setInterval(atualizar,500);
+setInterval(loop,500);

@@ -5,25 +5,6 @@ var display_x = 19;	//Largura do Display
 var display_y = 16;	//Altura do Display
 var nm_sprite = 'sprite';	//Nome do Sprite
 
-var sprite = [];
-
- sprite[1] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
- sprite[2] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
- sprite[3] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
- sprite[4] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
- sprite[5] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
- sprite[6] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
- sprite[7] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
- sprite[8] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
- sprite[9] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-sprite[10] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-sprite[11] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-sprite[12] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-sprite[13] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-sprite[14] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-sprite[15] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-sprite[16] = ['|',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
 function criar_display(){
 
 	//Passa por todos os campos
@@ -80,7 +61,7 @@ function mudar_code(){
 
 	var code = document.getElementById("code");
 	var txt = '';
-	txt += "var "+nm_sprite+" = [];<br>";
+	txt += " "+nm_sprite+"[1] = [];<br>";
 	txt += "<br>";
 
 	for(var y = 1; y <= display_y; y++){
@@ -88,9 +69,9 @@ function mudar_code(){
 
 			if(x == 1){
 				if(y < 10){
-					txt += "&nbsp;"+nm_sprite+"["+y+"] = ['|'";
+					txt += "&nbsp;"+nm_sprite+"[1]["+y+"] = ['|'";
 				}else{
-					txt += nm_sprite+"["+y+"] = ['|'";
+					txt += nm_sprite+"[1]["+y+"] = ['|'";
 				}
 				txt += ","+sprite[y][x];
 			}else{
@@ -103,6 +84,13 @@ function mudar_code(){
 
 	code.innerHTML = txt;
 
+}
+
+function interpretar_code(){
+	var script = document.getElementById("sprite");
+	var code_text = document.getElementById("code_text");
+
+	script.innerHTML = code_text
 }
 
 function mudar_nome_sprite(nm){
